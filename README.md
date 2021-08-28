@@ -1,4 +1,4 @@
-# docker_playpen
+# Docker Playpen
 
 Check in the bin folder for some scripts to run and connect to alpine and ubuntu images. I add this to the end of my PATH with something like.
 
