@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -x
+
+# docker run -it --rm -d --name alpine -v /mnt/c/docker/share:/share  alpine
+docker run -it --rm -d --name alpine --mount type=bind,source=/mnt/c/docker/share,target=/share  alpine
+
+docker ps
+docker container list -a
+

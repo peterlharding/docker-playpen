@@ -1,0 +1,21 @@
+#!/bin/sh
+
+if [ $# -eq 1 ] ; then
+  NAME=$1
+
+  ID=`docker ps | grep ${NAME} | awk '{print $1}'`
+
+  if [ ! -z "${ID}" ] ; then
+      echo "Connecting to ${NAME} -> ${ID}"
+      docker exec -it ${ID} bash
+  else
+      echo "No running container founds with name - ${NAME}"
+  fi
+
+else
+    echo "Specify name..."
+fi
+
+
+
+

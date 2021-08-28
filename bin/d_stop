@@ -1,0 +1,32 @@
+#!/bin/sh
+
+if [ $# -eq 1 ] ; then
+  NAME=$1
+
+  ID=`docker ps | grep ${NAME} | awk '{print $1}'`
+
+  if [ ! -z "${ID}" ] ; then
+      echo "Stopping ${NAME} -> ${ID}"
+      docker stop ${ID}
+      echo "*DONE*"
+      echo
+  else
+      echo
+      echo "No running container founds with name - ${NAME}"
+      echo
+  fi
+
+  echo "docker ps"
+  docker ps 
+  echo
+  echo "docker container list -a"
+  docker container list -a
+  echo
+
+else
+    echo "Specify name..."
+fi
+
+
+
+
