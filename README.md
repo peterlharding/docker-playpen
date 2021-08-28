@@ -27,3 +27,10 @@ alias dcp='docker container prune'
 ```
 
 
+# Docker Getting STarted
+
+```
+docker run -d -p 80:80 docker/getting-started
+```
+
+

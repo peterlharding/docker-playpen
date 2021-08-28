@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -x
+
+SRC=${HOME}/src/Docker/docker-playpen/share
+
+# docker run -it --rm -d --name alpine -v /mnt/c/docker/share:/share  alpine
+docker run -it --rm -d --name alpine --mount type=bind,source=${SRC},target=/share  alpine
+
+docker ps
+docker container list -a
+
